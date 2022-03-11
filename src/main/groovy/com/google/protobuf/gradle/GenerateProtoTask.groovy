@@ -620,6 +620,9 @@ public abstract class GenerateProtoTask extends DefaultTask {
       if (descriptorSetOptions.includeSourceInfo) {
         baseCmd += "--include_source_info"
       }
+      if (descriptorSetOptions.experimentalAllowProto3Optional) {
+        baseCmd += "--experimental_allow_proto3_optional"
+      }
     }
 
     List<List<String>> cmds = generateCmds(baseCmd, protoFiles, getCmdLengthLimit())
